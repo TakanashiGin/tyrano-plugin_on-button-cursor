@@ -5,7 +5,6 @@ tyrano.plugin.kag.ftag.master_tag.set_onbutton_cursor = {
         storage: "default"
     },
     start: function(pm){
-        console.log(2)
         if (pm.content == "opt") {
             this.kag.stat.on_button_cursor = pm.storage;
         } else if (pm.content == "run") {
