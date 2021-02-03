@@ -5,18 +5,9 @@ tyrano.plugin.kag.ftag.master_tag.set_onbutton_cursor = {
         storage: "default"
     },
     start: function(pm){
-        if (pm.content == "opt") {
-            this.kag.stat.on_button_cursor = pm.storage;
-        } else if (pm.content == "run") {
-            this.setOnButtonCursor(this.kag.stat.on_button_cursor);
-        }
+        if (pm.content == "opt") this.kag.stat.on_button_cursor = pm.storage;
+        else if (pm.content == "run") $(".event-setting-element").css("cursor",this.kag.stat.on_button_cursor == "default"? "auto" : "url(./data/image/" + this.kag.stat.on_button_cursor + "),default");
         this.kag.ftag.nextOrder();
-    },
-    setOnButtonCursor: function(cursor){
-        $(".event-setting-element").css({
-            "textDecoration": "none",
-            "cursor": cursor == "default"? "auto" : "url(./data/image/" + cursor + "),default"
-        });
     }
 };
 tyrano.plugin.kag.ftag.master_tag.set_onbutton_cursor.kag = TYRANO.kag;
